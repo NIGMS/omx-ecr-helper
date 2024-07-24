@@ -1,11 +1,28 @@
 # omx-ecr-helper
 NIGMS HealthOmics ECR Helper
 
+## Step 1: CloudFormation Template - Github OIDC
 
-## IAM Role: CloudFormation Template
+```yaml
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Configure the Execution Role for Terraform with OIDC
+Resources:
+  GithubOIDC:
+    Type: 'AWS::IAM::OIDCProvider'
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList:
+        - sts.amazonaws.com
+      ThumbprintList:
+        - 1b511abead59c6ce207077c0bf0e0043b1382612
+```
+
+## Step 2: CloudFormation Template - IAM Role
 
 
 ```yaml
+---
 Description: CloudFormation template for creating a StackSet to config IAM Role
   and Policies for EC2 Termination GH Action
 Resources:
