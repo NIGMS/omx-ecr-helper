@@ -37,7 +37,7 @@ jobs:
         run: npm install -g aws-cdk aws-cdk-lib
 
       - name: Install dependencies
-        run: npm install -g 
+        run: npm install && npm update
 
       - name: Bootstrap CDK
         run: cdk bootstrap aws://${{ github.event.inputs.aws_account_id }}/${{ github.event.inputs.aws_region }}
