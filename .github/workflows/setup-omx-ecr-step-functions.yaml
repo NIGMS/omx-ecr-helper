@@ -33,14 +33,18 @@ jobs:
           role-to-assume: arn:aws:iam::${{ github.event.inputs.aws_account_id }}:role/${{ github.event.inputs.role_name }}
           role-session-name: GitHubActions-HealthOmics-ECR
 
+      - name: Install awscli
+        run: |
+          sudo apt-get -y install awscli
+
       - name: Install CDK
         run: npm install -g aws-cdk
 
       - name: Bootstrap CDK
-        run: cdk bootstrap -all
+        run: cdk bootstrap aws://${{ github.event.inputs.aws_account_id }}/${{ github.event.inputs.aws_region }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Deploy OMX ECR Helper
-        run: cdk deploy --all --require-approval never
+        run: cdk deploy aws://${{ github.event.inputs.aws_account_id }}/${{ github.event.inputs.aws_region }} --require-approval never
