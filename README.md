@@ -35,7 +35,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Federated: !Sub arn:aws:iam::$${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com
+              Federated: !Sub arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com
             Action: sts:AssumeRoleWithWebIdentity
             Condition:
               StringEquals:
