@@ -33,10 +33,6 @@ jobs:
           role-to-assume: arn:aws:iam::${{ github.event.inputs.aws_account_id }}:role/${{ github.event.inputs.role_name }}
           role-session-name: GitHubActions-HealthOmics-ECR
 
-      - name: Install awscli
-        run: |
-          sudo apt-get -y install awscli
-
       - name: Install CDK
         run: npm install -g aws-cdk
 
