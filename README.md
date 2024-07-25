@@ -49,12 +49,7 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - cloudformation:Create*
-                  - cloudformation:Describe*
-                  - cloudformation:Update*
-                  - cloudformation:Delete*
-                  - cloudformation:Get*
-                  - cloudformation:Validate*
+                  - cloudformation:*
                   - kms:*
                   - s3:CreateBucket
                   - s3:ListBucket
