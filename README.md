@@ -49,14 +49,12 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - cloudformation:CreateStack
-                  - cloudformation:DescribeStacks
-                  - cloudformation:DescribeStackResources
-                  - cloudformation:DescribeStackEvents
-                  - cloudformation:UpdateStack
-                  - cloudformation:DeleteStack
-                  - cloudformation:GetTemplate
-                  - cloudformation:ValidateTemplate
+                  - cloudformation:Create*
+                  - cloudformation:Describe*
+                  - cloudformation:Update*
+                  - cloudformation:Delete*
+                  - cloudformation:Get*
+                  - cloudformation:Validate*
                   - kms:*
                   - s3:CreateBucket
                   - s3:ListBucket
