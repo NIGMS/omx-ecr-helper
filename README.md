@@ -42,8 +42,10 @@ Resources:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
               StringLike:
                 token.actions.githubusercontent.com:sub: repo:NIGMS/omx-ecr-helper:*
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AdministratorAccess"
       Policies:
-        - PolicyName: CBIITOmxEcrHelperPolicy
+        - PolicyName: NIGMSOmxEcrHelperPolicy
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
