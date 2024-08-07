@@ -59,6 +59,8 @@ Resources:
                   - s3:PutObject
                   - s3:DeleteObject
                   - iam:PassRole
+                  - iam:GetRole
+                  - iam:*
                   - sts:AssumeRole
                   - sts:GetCallerIdentity
                   - ecr:*
