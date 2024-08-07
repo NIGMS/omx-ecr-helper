@@ -61,13 +61,7 @@ Resources:
                   - iam:PassRole
                   - sts:AssumeRole
                   - sts:GetCallerIdentity
-                  - ecr:GetDownloadUrlForLayer
-                  - ecr:BatchGetImage
-                  - ecr:BatchCheckLayerAvailability
-                  - ecr:PutImage
-                  - ecr:InitiateLayerUpload
-                  - ecr:UploadLayerPart
-                  - ecr:CompleteLayerUpload
+                  - ecr:*
                   - lambda:CreateFunction
                   - lambda:InvokeFunction
                   - lambda:UpdateFunctionCode
